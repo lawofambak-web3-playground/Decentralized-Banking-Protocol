@@ -32,7 +32,7 @@ describe("Bank Deposit", function () {
     await theBank.connect(bob).depositIntoCompound({ value: parseEther("50") });
   });
 
-  it.only("Withdraw from Compound", async function () {
+  it("Withdraw from Compound", async function () {
     let accountEthBalance = await ethers.provider.getBalance(bob.address);
     console.log("\n", "Bob's ETH balance: ", accountEthBalance / 1e18);
     console.log("\n", "---Bob deposits 100 ETH---");
@@ -130,22 +130,5 @@ describe("Bank Deposit", function () {
     accountEthBalance = await ethers.provider.getBalance(bob.address);
     console.log("\n", "Bob's ETH balance: ", accountEthBalance / 1e18);
   });
-
-  // it("Test", async function () {
-  //   // await theBank.depositA({ value: parseEther("100") });
-  //   const ethMantissa = 1e18;
-  //   const blocksPerDay = 6570; // 13.15 seconds per block
-  //   const daysPerYear = 365;
-
-  //   let interestRate = await theBank.getAaveRate();
-  //   interestRate = interestRate / 1e27;
-  //   console.log(interestRate * 100);
-
-  //   let cRate = await theBank.getCompoundRate();
-  //   let apy = (((Math.pow((cRate / ethMantissa * blocksPerDay) + 1, daysPerYear))) - 1) * 100;
-  //   console.log(`Supply APY for ETH ${apy} %`);
-
-
-  // });
 
 });
