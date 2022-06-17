@@ -11,4 +11,4 @@
 ***For Aave***: A separate user deposit contract stores users' aToken (AWETH) balances since interest is accrued directly. The addresses of these contracts are stored in a mapping.
 
 ## Note:
-Currently, there is no borrowing functionality for users.
+Currently, there is no borrowing functionality for users. The *hardhat* folder contains the framework that was used to develop this protocol with tests to check for functionality. The *poc* folder contains the smart contracts for this protocol. (Users will need to download the some OpenZeppelin modules that are used throughout the contracts)
